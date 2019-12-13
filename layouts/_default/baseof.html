@@ -24,6 +24,9 @@
 	{{- if templates.Exists "partials/extra-head.html" -}}
 	{{ partial "extra-head.html" . }}
 	{{- end }}
+	{{ if .Params.asciinema }}
+	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/asciinema-player.css" />
+	{{ end }}
 </head>
 
 <body id="page">
@@ -45,6 +48,9 @@
 	{{- if templates.Exists "partials/extra-foot.html" -}}
 	{{ partial "extra-foot.html" . }}
 	{{- end }}
+	{{ if .Params.asciinema }}
+	<script src="{{ .Site.BaseURL }}js/asciinema-player.js"></script>
+	{{ end }}
 </body>
 
 </html>
